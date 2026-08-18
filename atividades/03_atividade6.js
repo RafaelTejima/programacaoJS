@@ -11,14 +11,7 @@ Mostre na tela o salário atual e o novo salário.
 */
 
 let salario = 2000
-console.log("Bom dia! Seu salário é de: R$" + salario)
-
 let aumento = 500
-salario = (salario + aumento)
-console.log("\nMeus parabéns pelo seu aumento. Seu salário atual é de: R$" + salario)
-
 let desconto_inss = 250
-salario = salario - desconto_inss
-console.log("mas como a vida não é um morango do amor, será descontado R$250 de seu salário pelo INSS.")
-console.log("Sendo assim, seu salário atual é de: R$" + salario )
-
+salario = salario + aumento - desconto_inss
+console.log("seu salário é de: " + salario)
