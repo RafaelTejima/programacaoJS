@@ -16,3 +16,4 @@ let var3 = var1
 var1 = var2
 var2 = var3
 console.log("O valor de var1 é "+var1+" e de var2 é "+var2)
+ 
