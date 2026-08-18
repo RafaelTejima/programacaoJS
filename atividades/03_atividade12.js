@@ -17,8 +17,8 @@ let percorrido =  250
 let combustivel = 20
 let preco_litro = 7
 let consumo = percorrido / combustivel
-let gasto = combustivel * litro
+let gasto = combustivel * preco_litro
 console.log("A distância percorrida foi de " + percorrido + "km")
 console.log("A quantidade de combustivel utilizado foi de " + combustivel + "L")
 console.log("O preço do litro é de " + preco_litro + "L")
-console.log("O consumo percorrido foi de " + preco_litro + "L")
+console.log("O consumo total do carro foi de: " + consumo + "\nE o total gasto com combustível foi de: " + gasto + "L")
