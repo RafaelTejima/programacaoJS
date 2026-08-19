@@ -18,24 +18,27 @@ let prompt = require("prompt-sync")()
 
 let data_nascimento = prompt("Digite o ano que voce nasceu: ")
 data_nascimento = 2026 - data_nascimento
+data_nascimento = parseInt(data_nascimento)
 console.log("Atualmente você tem: "+ data_nascimento + " anos!" )
 
 // Atividade 2
 
 let nota1 = prompt("Vamos calcular a média de notas. Digite a primeira nota: ")
-nota1 = parseInt(nota1)
+nota1 = parseFloat(nota1)
 let nota2 = prompt("Digite a segunda nota: ")
-nota2 = parseInt(nota2)
-let nota3 = prompt("Por fim, digite a última nota: ")
-nota3 = parseInt(nota3)
+nota2 = parseFloat(nota2)
+let nota3 = prompt("Por fim, digite a terceira nota: ")
+nota3 = parseFloat(nota3)
 let soma = nota1 + nota2 + nota3
-let media = soma / 2
+let media = soma / 3
 
 console.log("A média das notas é: " + media )
 
 // Atividade 3
 let produto = prompt("Digite o nome do seu produto: ")
 let estoque = prompt("Digite o quanto você tem em estoque: ")
+estoque = parseInt(estoque)
 let preco = prompt("Digite o preço do seu produto: ")
+preco = parseFloat(preco)
 let fatura = estoque * preco
-console.log("Produto: " +produto+ + "\nQuantidade em estoque: " + estoque + "\nPreço: " +preco+ "\nFatura: " +fatura ) 
+console.log("Produto: " +produto+ "\nQuantidade em estoque: " + estoque + "\nPreço: " +preco+ "\nFatura: " +fatura ) 
