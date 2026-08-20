@@ -9,9 +9,6 @@ let ingrediente3 = "Purê de batata"
 let ingrediente4 = "Queijo"
 let ingrediente5 = "Bacon"
 
-console.log("=======================================")
-console.log("CADASTRO DE PREÇOS - CONRADITO DOGUEZITO")
-console.log("=======================================")
 
 // Produtos:
 
@@ -25,7 +22,11 @@ console.log("   CARDÁPIO CONRADITO DOGUEZITO   ")
 console.log("=======================================")
 
 // Solicitação de preços:
- 
+
+console.log("=======================================")
+console.log("CADASTRO DE PREÇOS - CONRADITO DOGUEZITO")
+console.log("=======================================")
+
 let preco_ing1 = prompt("Informe o preço do " +ingrediente1+ ": ")
 preco_ing1 = parseFloat(preco_ing1)
 let preco_ing2 = prompt("Informe o preço do " +ingrediente2+ ": ")
