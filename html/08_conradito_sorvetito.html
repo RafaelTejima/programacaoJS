@@ -12,6 +12,7 @@
     
     <h1>Conradito Sorvetito</h1>
     <p>você tem 💲 <strong id="textoDinheiro" > 0</strong></p>
+    <a href="./09_painel.html" >Painel de login</a>
 
     <img src="./imgs/sorvete.png" onclick="fazerSorvete()" width="80px" />
 
@@ -23,11 +24,23 @@
         <li>Marca Gourmet - 💲 5000 <button>COMPRAR</button></li>
     </ul>
 
+    <p>Entre com uma conta para ganhar 💲 1.000 <button onclick="resgatarRecompensa()" >RESGATAR RECOMPENSA</button></p>
+
     <script>
         
         let dinheiro = 0
         let dinheiroPorClique = 1
         let preco_carrinho = 25
+
+        function resgatarRecompensa(){
+            if(localStorage.getItem("autenticado") == 1 ){
+                alert("Recompensa concebida!")
+                dinheiro += 1000
+                document.getElementById("textoDinheiro").innerHTML = dinheiro
+            } else{
+                alert("Você deve fazer login para pegar a recompensa...")
+            }
+        }
 
         function fazerSorvete(){
             dinheiro += dinheiroPorClique
@@ -44,6 +57,10 @@
                 preco_carrinho += parseInt(preco_carrinho * 0.2)
                 document.getElementById("textoDinheiro").innerHTML = dinheiro
                 document.getElementById("textoCarrinho").innerHTML = preco_carrinho
+            }
+
+            function freezerGrande(){
+                
             }
 
 
