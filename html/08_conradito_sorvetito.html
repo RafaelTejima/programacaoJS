@@ -35,20 +35,30 @@
         let preco_carrinho = 25
 
         function resgatarRecompensa(){
+
+            let verificarRecompensa = localStorage.getItem("verificarRecompensa")
+            if(verificarRecompensa == 1){
+                alert("Você já resgatou a recompensa. Por favor, pare.")
+                return
+            }
+                
             if(localStorage.getItem("autenticado") == 1 ){
                 alert("Recompensa concebida!")
                 dinheiro += 1000
+                localStorage.setItem("verificarRecompensa", 1)
                 document.getElementById("textoDinheiro").innerHTML = dinheiro
             } else{
                 alert("Você deve fazer login para pegar a recompensa...")
             }
 
-        }
+            }
+
         
         function fazerSorvete(){
             dinheiro += dinheiroPorClique
             document.getElementById("textoDinheiro").innerHTML = dinheiro
         }
+
 
         function carrinhoSorvete(){
 
@@ -61,11 +71,6 @@
                 document.getElementById("textoDinheiro").innerHTML = dinheiro
                 document.getElementById("textoCarrinho").innerHTML = preco_carrinho
             }
-
-            function freezerGrande(){
-                
-            }
-
 
         }
 
