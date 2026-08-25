@@ -5,3 +5,8 @@ body{
 ul{
     list-style-type: none;
 }
+
+a{
+    text-align: left;
+    display: flex;
+}

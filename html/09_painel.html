@@ -7,17 +7,18 @@
 </head>
 <body>
     
+    <a href="./08_conradito_sorvetito.html" >Voltar ao jogo</a>
+
     <div id="login" style="display: block;" >
         
-        <a href="./08_conradito_sorvetito.html" >Painel do jogo</a>
         <h1>Login</h1>
-        <forms>
+        <form>
             <p>Digite seu usuário</p>
             <input id="inputUser" />
             <p>Digite sua senha</p>
             <input id="inputPassword" type="password" required />
             <br/><br/>
-        </forms>
+        </form>
 
         <button onclick="autenticar()">Entrar</button>
 
@@ -29,9 +30,7 @@
         <h1>Painel administrativo</h1>
         <p>Você está logado como <strong>administrador</strong></p>
         <br/>
-        <form>
             <button onclick="logout()" id="logout">Sair da conta</button>
-        </form>
     </div>
     
     <script>
@@ -86,7 +85,7 @@
             localStorage.removeItem("autenticado")
 
              document.getElementById("painelAdmin").style.display = "none"
-            document.getElementById("logout").login.style = "block"
+            document.getElementById("login").style.display= "block"
         }
 
 

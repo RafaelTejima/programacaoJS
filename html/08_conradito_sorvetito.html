@@ -14,7 +14,9 @@
     <p>você tem 💲 <strong id="textoDinheiro" > 0</strong></p>
     <a href="./09_painel.html" >Painel de login</a>
 
-    <img src="./imgs/sorvete.png" onclick="fazerSorvete()" width="80px" />
+    <div id="sorveteDinheiro">
+        <img src="./imgs/sorvete.png" onclick="fazerSorvete()" width="80px" />
+    </div>
 
     <hr/>
 
@@ -40,8 +42,9 @@
             } else{
                 alert("Você deve fazer login para pegar a recompensa...")
             }
-        }
 
+        }
+        
         function fazerSorvete(){
             dinheiro += dinheiroPorClique
             document.getElementById("textoDinheiro").innerHTML = dinheiro
