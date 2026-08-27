@@ -16,7 +16,8 @@
     <hr/>
 
     <input placeholder="Digite um nome" id="inputNome"/>
-    <button onclick="inserir()" >Salvar</button>
+    <button id="inserirSalvar" onclick="inserir()" >Salvar</button>
+    <button id="salvarAlterações" onclick="salvarAlteracao()" style="display: none;">Salvar Alterações</button>
 
     <ul id="listaUsuarios">
       
@@ -27,11 +28,50 @@
         // Dados mockados
         let nomes = ["Conrado", "Caio", "Felipe", "Rafael"] // Array
 
+        let posicaoAlteracao = 0 
+
+
         buscarTodos()
+
+        function remover(nome){
+            let resposta = confirm("Tem certeza que deseja remover?")
+            if(resposta == false)
+                return
+
+            let posicaoRemocao = nomes.indexOf(nome)
+            nomes.splice(posicaoRemocao, 1)
+            buscarTodos()
+        }
+
+        function salvarAlteracao(){
+            let nome = document.getElementById("inputNome").value
+
+            if(nome.length < 0){
+                alert("Por favor, insira um nome")
+                return
+            }
+            
+            nomes[posicaoAlteracao] = nome
+            buscarTodos()
+            document.getElementById("inputNome").value = ""
+        }
+
+        function atualizar(nome){
+
+            posicaoAlteracao = nomes.indexOf(nome)
+
+            nome = document.getElementById("inputNome").value = nome
+
+            document.getElementById("inserirSalvar").style.display = "none"
+            document.getElementById("salvarAlterações").style.display = "inline-block"
+
+            }
+
 
         function inserir(){
             let nome = document.getElementById("inputNome").value
-            if(nome.length == 0){
+
+            if(nome.length < 3){
                 alert("Por favor, insira um nome")
                 return
             }
@@ -44,7 +84,7 @@
         function buscarTodos(){
             
             let html = ""
-            nomes.map( i => html += "<li> "+i+" <button>🖊</button> " + " <button>🗑</button> "+" </li>" )
+            nomes.map( i => html += `<li> ${i} <button onclick='atualizar("${i}")'>🖊</button> <button onclick='remover("${i}")' >🗑</button> </li>` )
             document.getElementById("listaUsuarios").innerHTML = html
 
         }
