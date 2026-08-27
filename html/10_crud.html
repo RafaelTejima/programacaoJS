@@ -54,6 +54,9 @@
             nomes[posicaoAlteracao] = nome
             buscarTodos()
             document.getElementById("inputNome").value = ""
+
+             document.getElementById("inserirSalvar").style.display = "inline-block"
+            document.getElementById("salvarAlterações").style.display = "none"
         }
 
         function atualizar(nome){
