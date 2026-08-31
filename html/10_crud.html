@@ -18,6 +18,7 @@
     <input placeholder="Digite um nome" id="inputNome"/>
     <button id="inserirSalvar" onclick="inserir()" >Salvar</button>
     <button id="salvarAlterações" onclick="salvarAlteracao()" style="display: none;">Salvar Alterações</button>
+    <button id="cancelarAlterações" onclick="cancelar()" style="display: none;">Cancelar</button>
 
     <ul id="listaUsuarios">
       
@@ -57,6 +58,7 @@
 
              document.getElementById("inserirSalvar").style.display = "inline-block"
             document.getElementById("salvarAlterações").style.display = "none"
+            document.getElementById("cancelarAlterações").style.display = "none"
         }
 
         function atualizar(nome){
@@ -66,9 +68,19 @@
             nome = document.getElementById("inputNome").value = nome
 
             document.getElementById("inserirSalvar").style.display = "none"
+            document.getElementById("cancelarAlterações").style.display = "inline-block"
             document.getElementById("salvarAlterações").style.display = "inline-block"
 
             }
+
+            function cancelar(){
+            document.getElementById("inputNome").value = ""
+
+            document.getElementById("inserirSalvar").style.display = "inline-block"
+            document.getElementById("salvarAlterações").style.display = "none"
+            document.getElementById("cancelarAlterações").style.display = "none"
+            }
+
 
 
         function inserir(){
